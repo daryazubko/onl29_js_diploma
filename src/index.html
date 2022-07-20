@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./scss/index.scss" />
+  <link rel="stylesheet" href="./scss/warnPopup.scss" />
+  <link rel="stylesheet" href="./scss/editCardPopup.scss" />
+  <script async src="./js/index.js"></script>
+  <title>Trello Clone</title>
+</head>
+
+<body>
+  <div class="app">
+    <div class="app-header">
+      <h1 class="app-title">Trello</h1>
+      <div id="clock"></div>
+    </div>
+    <div class="app-body">
+      <div class="items-wrapper">
+        <div class="app-body_item">
+          <span class="title" contenteditable="true">Введите название </span>
+          <div class="list">
+            <div class="list_item" draggable="true">Стартовая карточка</div>
+          </div>
+          <div class="form">
+            <textarea class="textarea" placeholder="Введите название для карточки"> </textarea>
+            <div class="buttons">
+              <button class="add_item-btn">Добавить карточку</button>
+              <button class="cancel_item-btn">Отмена</button>
+            </div>
+          </div>
+          <div class="add_btn"><span>+</span>Добавить карточку</div>
+        </div>
+        <div class="app-body_item">
+          <span class="title" contenteditable="true">Введите название </span>
+          <div class="list">
+            <div class="list_item" draggable="true">Стартовая карточка</div>
+          </div>
+          <div class="form">
+            <textarea class="textarea" placeholder="Введите название для карточки"> </textarea>
+            <div class="buttons">
+              <button class="add_item-btn">Добавить карточку</button>
+              <button class="cancel_item-btn">Отмена</button>
+            </div>
+          </div>
+          <div class="add_btn"><span>+</span>Добавить карточку</div>
+        </div>
+        <div class="add_new_column" onclick="addNewColumn()">+ Добавить доску</div>
+      </div>
+    </div>
+  </div>
+  <div class="warning-popup-in-progress">
+    <div class="form" onclick="((event) => {event.stopPropagation()})(event)">
+      <span>Warning</span>
+      <div class="buttons">
+        <div class="submit-btn">Submit</div>
+        <div class="btn" onclick="onCloseWarnPopup()">Cancel</div>
+      </div>
+    </div>
+  </div>
+  <div class="edit-card-popup">
+    <div class="form" onclick="((event) => {event.stopPropagation()})(event)">
+      <span>Edit card</span>
+      <textarea id="title"></textarea>
+      <div class="buttons">
+        <div class="submit-btn">Save</div>
+        <div class="delete-btn">Delete</div>
+        <div class="cancel-btn" onclick="onCloseEditCardPopup()">Cancel</div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
